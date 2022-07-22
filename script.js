@@ -4,7 +4,7 @@ function showTime(){
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
 
-    console.log(seconds);
+    // console.log(seconds);
     let pm = false;
     if(hour == 0)
         hour = 12;
@@ -20,7 +20,7 @@ function showTime(){
     let time = `${hour} : ${minutes} : ${seconds}`;
     time += (pm ? " PM": " AM");
 
-    
+
     let area = document.querySelector(".clock");
     area.textContent = time;
     setTimeout(showTime,1000);

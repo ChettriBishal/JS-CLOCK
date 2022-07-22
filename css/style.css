@@ -1,0 +1,12 @@
+*body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#info{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

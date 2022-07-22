@@ -1,18 +1,28 @@
 function showTime(){
-    let time = new Date();
-    let hour = time.getHours();
-    let minutes = time.getMinutes();
-    let seconds = time.getSeconds();
+    let date = new Date();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
 
-    let area = document.querySelector(".#clockDisplay");
+    console.log(seconds);
     let pm = false;
-    if(hour >= 12){
+    if(hour == 0)
+        hour = 12;
+    if(hour > 12){
         pm = true;
         hour -= 12;
     }
-    let display = `${hour} ${minutes} ${seconds}`;
-    display += (pm ? " PM": " AM");
-    area.innerHTML = display;
+    /* display */
+    hour = (hour < 10)? "0" + hour : hour;
+    minutes = (minutes < 10)? "0" + minutes: minutes;
+    seconds = (seconds < 10) ? "0" + seconds: seconds;
+
+    let time = `${hour} : ${minutes} : ${seconds}`;
+    time += (pm ? " PM": " AM");
+
+    
+    let area = document.querySelector(".clock");
+    area.textContent = time;
     setTimeout(showTime,1000);
 }
 
